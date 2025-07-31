@@ -1,89 +1,39 @@
-Sales Analysis Project (PostgreSQL)
+# 📊 Sales Analysis Project (PostgreSQL)
 
-📅 Project Overview
+This project focuses on analyzing sales data using PostgreSQL to uncover key insights about customers, products, and overall business performance.
 
-This project provides a comprehensive sales and customer analytics system using PostgreSQL. It covers different types of analysis and reporting from raw sales data including performance tracking, segmentation, and KPIs. The code is written as SQL scripts and designed to be used with a sales dataset that includes products, customers, and transactional records.
+## 📁 Project Components:
+- Raw Data: includes sales transactions, customer details, and product information  
+- SQL Scripts: located in the `Script/` folder and organized by analysis type  
+- README File: provides full documentation for project structure and purpose
 
-🌐 Data Sources
+## 🛠️ Tools Used:
+- PostgreSQL  
+- SQL  
+- Excel (for raw data preparation)
 
-The database consists of the following core tables:
+## 🔍 What Does the Analysis Cover?
+- Sales Over Time : trends in sales, customer count, and quantity sold by year and month  
+- Cumulative Metrics : monthly running totals and averages of sales  
+- Performance Analysis : compare product sales to averages and previous years  
+- Category Contribution : identify which product categories contribute most to revenue  
+- Customer Segmentation : classify customers into VIP, Regular, and New based on activity and spending  
+- Product Segmentation : label products as High, Mid, or Low Performers
 
-gold_fact_sales: Sales transaction facts (order_number, product_key, customer_key, sales_amount, etc.)
+## 📊 Key Reports (SQL Views):
+- `gold.report_customers`: shows customer KPIs like lifetime, orders, spend, and segmentation  
+- `gold.report_product`: summarizes product reach, sales, order frequency, and performance level
 
-gold_dim_products: Product details (product_key_product_name, category, cost, etc.)
+## 🚀 How to Use:
+1. Import your dataset into PostgreSQL using the following tables:  
+   - `gold_fact_sales`  
+   - `gold_dim_products`  
+   - `gold_dim_customers`  
+2. Run the SQL scripts in order or based on the analysis you need  
+3. Use the created views in your reporting tool (Power BI, Tableau, etc.)
 
-gold_dim_customers: Customer details (customer ID, customer_name, birthdate, etc.)
+---
 
-✍️ SQL Tasks Breakdown
-
-[1] Change Over Time Analysis
-
-Analyze total sales, customer count, and quantity sold per year and month to monitor trends.
-
-[2] Cumulative Analysis
-
-Compute monthly sales and their running totals and averages to visualize cumulative performance.
-
-[3] Performance Analysis
-
-Track yearly product performance:
-
-Compare sales to average sales per product
-
-Analyze growth/decline from the previous year
-
-[4] Part-To-Whole
-
-Identify which categories contribute most to total sales using percent-of-total breakdown.
-
-[5] Data Segmentation
-
-Segment:
-
-Products based on their cost ranges
-
-Customers based on spending and purchase history:
-
-VIP: > 12 months + > $5000
-
-Regular: > 12 months + ≤ $5000
-
-New: < 12 months history
-
-[6] Customer Report (gold.report_customers)
-
-A view that aggregates and reports key customer KPIs:
-
-Age and segmentation
-
-Total orders, sales, quantities, and products
-
-Recency, lifespan
-
-Average order value & monthly spend
-
-[7] Product Report (gold.report_product)
-
-A view that summarizes product performance:
-
-Category, subcategory, and cost
-
-Customer reach, sales, and order frequency
-
-Recency, average order value, and monthly revenue
-
-Segmented as: High-Performer, Mid-Range, Low-Performer
-
-📃 Outputs
-
-SQL views: gold.report_customers, gold.report_product
-
-Insights across time, segments, and performance levels
-
-🚀 How to Use
-
-Import your dataset into PostgreSQL using the gold_fact_sales, gold_dim_products, and gold_dim_customers schemas.
-
-Run the scripts in order or as needed.
+> This project was created as part of my journey to improve my data analysis skills using SQL and real-world business data. Feedback is always welcome!
 
 Use the two views for dashboards or reporting tools.
